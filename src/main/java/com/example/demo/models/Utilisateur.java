@@ -15,10 +15,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "utilisateur",uniqueConstraints = {
-        @UniqueConstraint(columnNames = "username"),
-        @UniqueConstraint(columnNames = "email")
-})
+@Table(name = "utilisateur")
+
 
 
 public class Utilisateur  implements Serializable {
@@ -28,29 +26,26 @@ public class Utilisateur  implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Integer id;
-    private  String username;
+    private String metier;
+    private String mobile;
     private String email;
-    private String job;
+    private Integer anneeExperience;
+    private String nom;
     private String source;
-   private Integer experience;
-   private String phone;
     private String cv;
-    private String password;
     private Status status;
-    private Role role;
+    private String interviewDate;
+    private String place;
 
 
 
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
-
-    public Utilisateur(String email, String username, String encode) {
-    }
-
-    //8altaaa
 
 
-    //8ALTA
+
+
+
+
+
+
 }

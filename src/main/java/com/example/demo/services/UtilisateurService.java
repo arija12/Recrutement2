@@ -28,15 +28,18 @@ public class UtilisateurService implements UtilisateurInterface {
 
         Utilisateur utilisateurtoupdate;
         utilisateurtoupdate= utilisateurRepository.getOne(Id);
-        utilisateurtoupdate.setPassword(utilisateur.getPassword());
+        utilisateurtoupdate.setMetier(utilisateur.getMetier());
+        utilisateurtoupdate.setMobile(utilisateur.getMobile());
         utilisateurtoupdate.setEmail(utilisateur.getEmail());
+        utilisateurtoupdate.setAnneeExperience(utilisateur.getAnneeExperience());
+        utilisateurtoupdate.setNom(utilisateur.getNom());
+        utilisateurtoupdate.setSource(utilisateur.getSource());
         utilisateurtoupdate.setCv(utilisateur.getCv());
-        utilisateurtoupdate.setExperience(utilisateur.getExperience());
-      //  utilisateurtoupdate.setUserName(utilisateur.getUserName());
-        utilisateurtoupdate.setJob(utilisateur.getJob());
-        utilisateurtoupdate.setPhone(utilisateur.getPhone());
-        utilisateurtoupdate.setSource(utilisateur.getPhone());
         utilisateurtoupdate.setStatus(utilisateur.getStatus());
+        utilisateurtoupdate.setInterviewDate(utilisateur.getInterviewDate());
+        utilisateurtoupdate.setPlace(utilisateur.getPlace());
+
+
 
 
         return utilisateurRepository.saveAndFlush(utilisateurtoupdate);
@@ -54,7 +57,8 @@ public class UtilisateurService implements UtilisateurInterface {
 
     @Override
     public Optional<Utilisateur> getById(Integer Id) {
-        return utilisateurRepository.findById(Id);
+
+       return utilisateurRepository.findById(Id);
     }
 
 

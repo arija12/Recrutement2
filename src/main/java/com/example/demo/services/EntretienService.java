@@ -33,6 +33,7 @@ public class EntretienService  implements EntretienInterface{
         entretientoupdate.setDate(entretien.getDate());
         entretientoupdate.setName(entretien.getName());
         return entretienRepository.saveAndFlush(entretientoupdate);
+        //saveAndFlush ki meneste3mlch id neste3ml email save pour iinstance
     }
 
     @Override
@@ -46,6 +47,7 @@ public class EntretienService  implements EntretienInterface{
 
     @Override
     public Optional<Entretien> getById(Integer Id) {
+
         return entretienRepository.findById(Id);
     }
 
@@ -53,6 +55,7 @@ public class EntretienService  implements EntretienInterface{
     public void deleteEntretien(Integer Id) {
 
         Optional <Entretien> entretien = entretienRepository.findById(Id);
+
         entretienRepository.delete(entretien.get());
         return;
 
